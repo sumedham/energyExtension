@@ -1,0 +1,8 @@
+{
+    "name":"Energy Extension",
+    "description": "How much energy is this URL using?",
+    "version": "1.0",
+    "manifest_version": 2,
+    "service_worker": "background.js",
+    "permissions": ["<all_urls>"]
+} 
