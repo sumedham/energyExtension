@@ -10,6 +10,9 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./aws-node-http-api
     strategy:
       matrix:
         node-version: [14.x,16.x]
@@ -19,6 +22,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - 
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
