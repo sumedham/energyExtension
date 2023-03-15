@@ -32,7 +32,7 @@ const getEnergy = async energy => {
   };
   var tablink = await getCurrentTab();
   console.log(tablink)
-    const BASE_URL = "https://xx1saw0gee.execute-api.us-east-2.amazonaws.com/dev/carbon?urltocheck="+tablink;
+    const BASE_URL = "https://k8xji7gvsa.execute-api.us-east-1.amazonaws.com/carbon?urltocheck="+tablink;
     console.log(BASE_URL)
    try {
     console.log("hey")

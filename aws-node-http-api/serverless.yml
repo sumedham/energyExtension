@@ -1,0 +1,31 @@
+service: aws-node-http-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+layers:
+  axios: 
+    package: 
+      artifact: layers/axios.zip
+
+functions:
+  api:
+    handler: index.handler
+    timeout: 30 # optional, in seconds, default is 6
+    layers: 
+      -  {Ref: AxiosLambdaLayer}
+    events:
+      - httpApi:
+          path: /carbon
+          method: get
+
+plugins:
+  - serverless-plugin-datadog
+
+custom:
+  datadog:
+    site: us5.datadoghq.com
+    apiKey: 564152073e1f56dcf8146c001bb21f4d
+
