@@ -10,6 +10,9 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: /aws-node-http-api
     strategy:
       matrix:
         node-version: [14.x]
