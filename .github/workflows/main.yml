@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./aws-node-http-api
+        working-directory: ../../aws-node-http-api
     strategy:
       matrix:
         node-version: [14.x,16.x]
